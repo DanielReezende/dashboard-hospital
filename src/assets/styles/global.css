@@ -1,0 +1,69 @@
+:root {
+  --bg: rgba(255, 255, 255, 0.6);
+  --linear-gradient: linear-gradient(
+    119deg,
+    #d8d2fc 17.58%,
+    #d8d2fc 17.58%,
+    #d8d2fc 17.59%,
+    #fde2e0 41.89%,
+    #e6e4ea 68%,
+    #e0e9f4 103.34%,
+    rgba(230, 225, 232, 0) 103.35%,
+    #e0e9f4 103.35%
+  );
+  --white: #ffff;
+  --black: #000;
+  --blue-900: #180c47;
+  --blue-500: #3f779b;
+  --blue-400: #77beeb;
+  --blue-200: #edf4fc;
+  --red-200: #ff706f;
+  --purple-200: #ca79c6;
+  --green-200: #79cfa6;
+  --shadow: 0px 4px 15px 0px rgba(216, 210, 252, 0.64);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, #root {
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+  color: var(--blue-900);
+}
+
+body, input, select, textarea, span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--blue-900);
+}
+
+ul {
+  list-style: none;
+}
+
+button, a {
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+  outline: none;
+
+  transition: all ease-in 0.2s;
+}
+
+button:hover {
+  filter: brightness(0.85);
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+}
