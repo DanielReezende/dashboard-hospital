@@ -1,14 +1,11 @@
-import { Button } from "./components/Button";
+import { Home } from "./pages/private/Home";
 
 function App() {
   return (
-    <div>
-      <h1>Olá Mundo</h1>
+    <>
 
-      <Button text="Olá Ricardo"></Button>
-      <Button text="Olá Daniel" />
-      <Button text="Olá Roni" />
-    </div>
+      <Home />
+    </>
   );
 }
 
