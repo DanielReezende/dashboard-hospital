@@ -15,6 +15,7 @@
 
   display: grid;
   grid-template-columns: 185px auto;
+
 }
 
 .container aside {
@@ -27,7 +28,14 @@
   padding: 2.75rem 1.875rem;
 }
 
-.sidebar {
+.sidebar { 
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 3.625rem 0rem;
   
 }
 
