@@ -1,11 +1,12 @@
-import { Home } from "./pages/private/Home";
+import { BrowserRouter } from 'react-router-dom';
+
+import { Routers } from './routes';
 
 function App() {
   return (
-    <>
-
-      <Home />
-    </>
+    <BrowserRouter>
+      <Routers />
+    </BrowserRouter>
   );
 }
 
