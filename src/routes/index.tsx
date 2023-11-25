@@ -1,8 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
-// Pages
+// Pages Private
 import { Home } from "../pages/private/Home";
-
 import { CadPacientes } from "../pages/private/Pacientes";
 import { Prescricoes } from "../pages/private/Prescricoes";
 import { Resumoalta } from "../pages/private/Resumoalta";
@@ -12,19 +11,24 @@ import { Evolucaodiaria } from "../pages/private/Evolucaodiaria";
 import { Evolucaonoturna } from "../pages/private/Evolucaonoturna";
 import { Evolucaoenfermagem } from "../pages/private/Evolucaoenfermagem";
 
+// Layouts
+import { PrivateLayout } from "../layouts/PrivateLayout";
+
 export function Routers() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/CadPacientes" element={<CadPacientes />} />
-      <Route path="/Prescricoes" element={<Prescricoes />} />
-      <Route path="/Resumoalta" element={<Resumoalta />} />
-      <Route path="/Admissao" element={<Admissao />} />
-      <Route path="/Exames" element={<Exames />} />
-      <Route path="/Evolucaodiaria" element={<Evolucaodiaria />} />
-      <Route path="/Evolucaonoturna" element={<Evolucaonoturna />} />
-      <Route path="/Evolucaoenfermagem" element={<Evolucaoenfermagem />} />
+      <Route element={<PrivateLayout/>}>
+        <Route path="/" element={<Home />} />
+        <Route path="/CadPacientes" element={<CadPacientes />} />
+        <Route path="/Prescricoes" element={<Prescricoes />} />
+        <Route path="/Resumoalta" element={<Resumoalta />} />
+        <Route path="/Admissao" element={<Admissao />} />
+        <Route path="/Exames" element={<Exames />} />
+        <Route path="/Evolucaodiaria" element={<Evolucaodiaria />} />
+        <Route path="/Evolucaonoturna" element={<Evolucaonoturna />} />
+        <Route path="/Evolucaoenfermagem" element={<Evolucaoenfermagem />} />
+      </Route>
     </Routes>
   );
 }

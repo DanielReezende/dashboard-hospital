@@ -1,0 +1,25 @@
+.background {
+  height: 100vh;
+
+  background: var(--linear-gradient);
+
+  padding: 2rem 3.75rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1470px;
+  min-height: 100%;
+
+  background:  var(--bg);
+
+  display: grid;
+  grid-template-columns: 185px auto;
+
+}
+
+.content {
+  width: 100%;
+
+  padding: 2.75rem 1.875rem;
+}
