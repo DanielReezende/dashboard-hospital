@@ -7,15 +7,14 @@ export function Home() {
     <div className={styles.background}>
       <main className={styles.container}>
         <aside className={styles.sidebar}>
-          <Link to="/test">Test</Link>
-          <button>pRescrição</button>
-          <button>Paciente</button>
-          <button>Resumo de alta</button>
-          <button>aDmissão</button>
-          <button>Exames</button>
-          <button>Evolução Diária</button>
-          <button>evoLução Noturna</button>
-          <button>enferMagem</button>
+          <Link to="/CadPacientes">Pacientes</Link>
+          <Link to="/Prescricoes">Prescrição UTI</Link>
+          <Link to="/Resumoalta">Resumo de Alta</Link>
+          <Link to="/Admissao">Admissão</Link>
+          <Link to="/Exames">Exames</Link>
+          <Link to="/Evolucaodiaria">Evolução Diária</Link>
+          <Link to="/Evolucaonoturna">Evolução Noturna</Link>         
+          <Link to="/Evolucaoenfermagem">Evolução Enfermagem</Link>         
         </aside>
 
         <div className={styles.content}>
