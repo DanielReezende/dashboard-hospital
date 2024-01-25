@@ -30,17 +30,26 @@ export function CadPacientes() {
           <div className={styles["form-line"]}>
             <Input name="name" label="Nome Completo" control={control} />
 
+          </div>
+
+          <div className={styles["form-line"]}>
+
             <div className={styles["input-group"]}>
-              <input type="text" placeholder="Endereço" />
+
+              <Input name="endereco" label="Endereço" control={control} />
 
               <Input
                 name="birthdate"
                 label="Data de nascimento"
                 control={control}
-                mask="99/99/9999"
+                mask="00/00/0000"
               />
+
             </div>
+
           </div>
+
+          
           <div className={styles["form-line"]}>
             <Select
               altText="Selecione seu gênero"
@@ -51,8 +60,8 @@ export function CadPacientes() {
               id="genre"
             />
           </div>
-
-          <input type="text" placeholder="Data de nascimento" />
+          
+          
         </form>
       </section>
     </div>
