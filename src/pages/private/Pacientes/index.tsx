@@ -37,7 +37,7 @@ export function CadPacientes() {
                 name="birthdate"
                 label="Data de nascimento"
                 control={control}
-                mask="99/99/9999"
+                mask="00/00/0000"
               />
             </div>
           </div>
