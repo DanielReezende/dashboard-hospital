@@ -1,12 +1,12 @@
 import { SelectHTMLAttributes, useState } from "react";
-import { Control, Controller, FieldValues } from "react-hook-form";
+import { Control, Controller } from "react-hook-form";
 
 import { Option } from "../../../@types/app";
 
 import styles from "./select.module.css";
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
-  control: Control<FieldValues>;
+  control: Control<any>;
   name: string;
   error?: string;
   options: Option[];

@@ -9,13 +9,27 @@ import { genres } from "../../../helpers/constants";
 
 import styles from "./pacientes.module.css";
 
+
+interface FormData {
+  name: string;
+  address: string;
+  genre: "masculino" | "feminino" | undefined;
+  birthdate: string;
+}
+
 export function CadPacientes() {
   const {
-    handleSubmit: onSubmit,
+    handleSubmit,
     control,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>({
+    mode: "onBlur"
+  });
+
+  function handleNewPacient(data: FormData) {
+    console.log(data.name);
+  }
 
   return (
     <div className={styles.container}>
@@ -26,17 +40,14 @@ export function CadPacientes() {
           <button>Listagem de Pacientes</button>
         </header>
 
-        <form>
+        <form onSubmit={handleSubmit(handleNewPacient)}>
           <div className={styles["form-line"]}>
             <Input name="name" label="Nome Completo" control={control} />
-
           </div>
 
           <div className={styles["form-line"]}>
-
             <div className={styles["input-group"]}>
-
-              <Input name="endereco" label="Endereço" control={control} />
+              <Input name="address" label="Endereço" control={control} />
 
               <Input
                 name="birthdate"
@@ -44,12 +55,9 @@ export function CadPacientes() {
                 control={control}
                 mask="00/00/0000"
               />
-
             </div>
-
           </div>
 
-          
           <div className={styles["form-line"]}>
             <Select
               altText="Selecione seu gênero"
@@ -60,8 +68,7 @@ export function CadPacientes() {
               id="genre"
             />
           </div>
-          
-          
+          <button type="submit">Cadastrar Paciente</button>
         </form>
       </section>
     </div>

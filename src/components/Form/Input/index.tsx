@@ -1,12 +1,12 @@
 import { InputHTMLAttributes, useState } from "react";
 import { IMaskInput } from "react-imask";
 
-import { Control, Controller, FieldValues } from "react-hook-form";
+import { Control, Controller } from "react-hook-form";
 
 import styles from "./input.module.css";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  control: Control<FieldValues>;
+  control: Control<any>;
   name: string;
   mask?: string;
   error?: string;
