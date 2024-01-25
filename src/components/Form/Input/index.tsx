@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes, useState } from "react";
 import { IMaskInput } from "react-imask";
 
 import { Control, Controller, FieldValues } from "react-hook-form";
@@ -21,6 +21,16 @@ export function Input({
   label,
   ...rest
 }: InputProps) {
+  const [inputHasValue, setInputHasValue] = useState(false);
+
+  function handleOnBlur(event: React.FocusEvent<HTMLInputElement, Element>) {
+    if (event.target.value.length > 0) {
+      setInputHasValue(true);
+    } else {
+      setInputHasValue(false);
+    }
+  }
+
   return (
     <div className={styles.container}>
       <Controller
@@ -36,6 +46,7 @@ export function Input({
               value={field.value}
               {...rest}
               id={name}
+              onBlur={(event) => handleOnBlur(event)}
             />
           ) : (
             <input
@@ -46,11 +57,21 @@ export function Input({
               value={field.value}
               name={name}
               id={name}
+              onBlur={(event) => handleOnBlur(event)}
             />
           );
         }}
       />
-      <label htmlFor={name}>{label}</label>
+      <label
+        className={
+          inputHasValue
+            ? `${styles["label-input"]} ${styles.label}`
+            : `${styles["label-input"]}`
+        }
+        htmlFor={name}
+      >
+        {label}
+      </label>
       {error && <span>{error}</span>}
     </div>
   );

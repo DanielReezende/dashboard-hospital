@@ -1,42 +1,56 @@
 .container {
   width: 100%;
+}
+
+.select-container {
+  width: 100%;
   position: relative;
 }
 
-.container input {
+.select-container select {
   border: 0;
   border-bottom: 1px solid rgba(39, 30, 74, 0.5);
   outline: none;
+  padding-bottom: 6px;
 }
 
-input,
+
+
+select,
 label {
   width: 100%;
   font-size: 1rem;
 }
 
-input:focus {
+select:focus {
+  display: inline-block;
   border-bottom-color: var(--blue-900);
 }
 
-input:focus + label {
+select:focus option {
+  display: block;
+}
+
+select:focus + label {
   color: var(--blue-900);
   font-weight: bold;
   font-size: 0.75rem;
   top: -20px;
 }
 
-.label-input {
+.label-select {
   position: absolute;
   top: 0;
   left: 0;
 
   display: flex;
   align-items: center;
+  background-color: white;
+  z-index: 111;
 
   color: rgba(39, 30, 74, 0.8);
 
-  transition: 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .label {
@@ -44,4 +58,10 @@ input:focus + label {
   font-weight: bold;
   font-size: 0.75rem;
   top: -20px;
+  background-color: transparent;
+}
+
+.label:hover + select,
+.label:focus + select {
+  display: inline-block;
 }
